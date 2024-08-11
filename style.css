@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-style: normal;
+}
+
+body {
+  background: #0E1323;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  gap: 24px;
+  padding: 31px 0;
+}
+
+.curved {
+  border-radius: 15px;
+}
+
+.card-header {
+  background: #1C204B;
+  max-width: 327px;
+  max-height: 203px;
+}
+.card-header .card-title {
+  padding: 32px;
+  gap: 20px;
+  background: #5747EA;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  font-family: "Rubik";
+  font-size: 15px;
+  font-weight: 400;
+  line-height: normal;
+  color: #BBC0FF;
+  width: 100%;
+  height: 133px;
+}
+.card-header .card-title img {
+  border-radius: 50%;
+  max-height: 64px;
+  max-width: 64px;
+  border: 3px solid #fff;
+}
+.card-header .card-title h2 {
+  font-family: "Rubik";
+  font-size: 24px;
+  font-weight: 400;
+  line-height: normal;
+  color: #FFFFFF;
+}
+.card-header .card-title .centered {
+  align-self: center;
+}
+.card-header .option-wheel {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding: 25px 0px;
+}
+.card-header .option-wheel > * {
+  flex: 1;
+}
+.card-header .option-wheel button {
+  background: none;
+  background-color: transparent;
+  border: none;
+  color: #7078C9;
+  font-family: "Rubik";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: normal;
+}
+.card-header .option-wheel button:hover {
+  color: white;
+}
+.card-header .option-wheel .active {
+  color: white;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  max-width: 327px;
+  width: 100%;
+  gap: 24px;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: stretch;
+  background: #FF8B64;
+  max-width: 327px;
+  min-height: 160px;
+  color: #FFFFFF;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.card:hover .card-content {
+  background: #33397A;
+}
+.card .card-image {
+  position: absolute;
+  top: -5px;
+  right: 10px;
+  width: 60px;
+  height: auto;
+  z-index: 1;
+}
+.card .card-content {
+  z-index: 2;
+  max-height: 122px;
+  padding: 28px 24px;
+  background: #1C204B;
+  border-radius: 15px;
+}
+.card .card-content-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.card .card-content-bottom h2 {
+  font-family: "Rubik";
+  font-size: 32px;
+  font-weight: 400;
+  line-height: normal;
+}
+.card .card-content-bottom .previous {
+  font-family: "Rubik";
+  font-size: 15px;
+  font-weight: 400;
+  line-height: normal;
+  color: #BBC0FF;
+}
+.card .title {
+  font-family: "Rubik";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@media screen and (min-width: 955px) {
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: 255px repeat(3, 1fr);
+    gap: 30px;
+    min-height: 518px;
+    max-width: 1110px;
+    width: 90%;
+  }
+  .card-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    max-height: none;
+    height: 100%;
+  }
+  .card-header .card-title {
+    min-height: 66%;
+    flex-direction: column;
+    gap: 43px;
+  }
+  .card-header .card-title .centered {
+    font-weight: 400;
+    font-size: 15px;
+  }
+  .card-header .card-title h2 {
+    font-size: 40px;
+    font-weight: 400;
+  }
+  .card-header .option-wheel {
+    padding: 26px 32px;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+  }
+  .cards-container {
+    max-width: none;
+    grid-column: 2/-1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .cards-container .card .card-content {
+    min-height: 199px;
+  }
+  .cards-container .card .card-content-top {
+    margin-bottom: 25px;
+  }
+  .cards-container .card .card-content .title {
+    font-family: "Rubik";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .cards-container .card .card-content h2 {
+    font-family: "Rubik";
+    font-size: 56px;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 8px;
+  }
+  .cards-container .card .card-content .previous {
+    font-family: "Rubik";
+    font-size: 15px;
+    font-weight: 400;
+    line-height: normal;
+  }
+}/*# sourceMappingURL=style.css.map */

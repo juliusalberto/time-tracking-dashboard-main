@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-style: normal;
+}
+
+@mixin font-style($family, $size, $weight, $line-height: normal) {
+    font-family: $family;
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $line-height;
+}
+
+@mixin flexbox($direction: row, $justify: flex-start, $align: stretch) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+body {
+    background: #0E1323;
+    @include flexbox(column, flex-start, center);
+    align-content: center;
+    gap: 24px;
+    padding: 31px 0;
+}
+
+.curved {
+    border-radius: 15px;
+}
+
+.card-header {
+    background: #1C204B;
+    max-width: 327px;
+    max-height: 203px;
+
+    .card-title {
+        padding: 32px;
+        gap: 20px;
+        background: #5747EA;
+        @include flexbox(row);
+        @include font-style("Rubik", 15px, 400);
+        color: #BBC0FF;
+        width: 100%;
+        height: 133px;
+
+        img {
+            border-radius: 50%;
+            max-height: 64px;
+            max-width: 64px;
+            border: 3px solid #fff;
+        }
+
+        h2 {
+            @include font-style("Rubik", 24px, 400);
+            color: #FFFFFF;
+        }
+
+        .centered {
+            align-self: center;
+        }
+
+    }
+
+    .option-wheel {
+        @include flexbox(row);
+        padding: 25px 0px;
+
+        > * {
+            flex: 1;
+        }
+
+        button {
+            background: none;
+            background-color: transparent;
+            border: none;
+            color: #7078C9;
+            @include font-style("Rubik", 18px, 400);
+
+            &:hover {
+                color: white;
+            }
+        }
+
+        .active {
+            color: white;
+        }
+    }
+}
+
+.cards-container {
+    @include flexbox(column, center);
+    max-width: 327px;
+    width: 100%;
+    gap: 24px;
+}
+
+.card {
+    position: relative;
+    @include flexbox(column, flex-end);
+    background: #FF8B64;
+    max-width: 327px;
+    min-height: 160px;
+    color: #FFFFFF;
+    border-radius: 15px;
+    overflow: hidden;
+
+    &:hover {
+        .card-content {
+            background: #33397A;
+        }
+    }
+
+    .card-image {
+        position: absolute;
+        top: -5px;
+        right: 10px;
+        width: 60px;
+        height: auto;
+        z-index: 1;
+    }
+
+    .card-content {
+        z-index: 2;
+        max-height: 122px;
+        padding: 28px 24px;
+        background: #1C204B;
+        border-radius: 15px;
+
+        &-top {
+            @include flexbox(row, space-between, center);
+        }
+
+        &-bottom {
+            h2 {
+                @include font-style("Rubik", 32px, 400);
+            }
+    
+            .previous {
+                @include font-style("Rubik", 15px, 400);
+                color: #BBC0FF;
+            }
+        }
+    }
+
+    .title {
+        @include font-style("Rubik", 18px, 400);
+    }
+}
+
+@media screen and (min-width: 955px) {
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    
+      .container {
+        display: grid;
+        grid-template-columns: 255px repeat(3, 1fr);
+        gap: 30px;
+        min-height: 518px;
+        max-width: 1110px;
+        width: 90%;
+      }
+
+      .card-header {
+        @include flexbox(column);
+        max-height: none;
+        height: 100%;
+
+        .card-title {
+            min-height: 66%;
+            flex-direction: column;
+            gap: 43px;
+
+            .centered {
+                font-weight: 400;
+                font-size: 15px;
+            }
+
+            h2 {
+                font-size: 40px;
+                font-weight: 400;
+            }
+        }
+
+        .option-wheel {
+            padding: 26px 32px;
+            flex-direction: column;
+            align-items: flex-start;
+            flex: 1;
+        }
+      }
+
+      .cards-container {
+        max-width: none;
+        grid-column: 2 / -1;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        .card {
+            .card-content {
+                min-height: 199px;
+
+                &-top {
+                    margin-bottom: 25px;
+                }
+
+                .title {
+                    @include font-style("Rubik", 18px, 400);
+                }
+
+                h2 {
+                    @include font-style("Rubik", 56px, 400);
+                    margin-bottom: 8px;
+                }
+
+                .previous {
+                    @include font-style("Rubik", 15px, 400);
+                }
+            }
+        }
+      }
+}

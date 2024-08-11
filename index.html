@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="style.css">
+  <script src="./main.js" defer></script>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Time tracking dashboard</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="card-header curved">
+      <div class="card-title curved">
+        <img src="/images/image-jeremy.png" alt="" class="prof-pic">
+        <div class="centered">
+          <div>Report for</div>
+          <h2>Jeremy Robson</h2>
+        </div>
+      </div>
+      <div class="option-wheel">
+        <button>Daily</button>
+        <button class="active">Weekly</button>
+        <button>Monthly</button>
+      </div>
+    </div>
+    <div class="cards-container" id="cards-container"></div>
+  </div>
+</body>
+</html>
